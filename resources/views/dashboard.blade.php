@@ -2,6 +2,6 @@
 
 @section('content')
 
-desde dashboard
+desde dashboard 2
 
 @endsection
