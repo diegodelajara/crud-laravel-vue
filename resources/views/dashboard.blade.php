@@ -1,7 +1,3 @@
-@extends('app')
+Dashboard
 
-@section('content')
 
-desde dashboard 2
-
-@endsection
