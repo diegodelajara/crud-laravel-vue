@@ -12622,11 +12622,14 @@ new Vue({
 				this.keeps = response.data
 			});
 		},
-		deleteKeep: function(id){
-			alert(id);
-		},
 		editKeep: function(id){
 			alert('Editar: '+id);
+		},
+		deleteKeep: function(id){
+			var url = 'tasks/' + id;
+			axios.delete(url).then( response => {
+				this.getKepps();
+			});
 		}
 	}
 })
