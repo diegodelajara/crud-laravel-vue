@@ -1,7 +1,11 @@
+
+
 new Vue({
 	el: '#app',
 	data : {
-		keeps: []
+		keeps: [],
+		newKeep: '',
+		errors: ''
 	},
 	created: function(){
 		this.getKepps();
@@ -21,6 +25,17 @@ new Vue({
 			axios.delete(url).then( response => {
 				this.getKepps();
 			});
+		},
+		saveKeep: function(){
+			var url = 'tasks';
+			axios.post(url, { 
+				keep: this.newKeep
+			}).then( response => {
+				this.getKeeps();
+				this.newKeep = '';
+				$('.modal').modal('close');
+			});
 		}
 	}
-})
+});
+
