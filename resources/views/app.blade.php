@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-xs-12 table-responsive">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
-                          Launch demo modal
+                          Nueva tarea
                         </button>
 
 
