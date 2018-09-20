@@ -5,9 +5,10 @@ new Vue({
 	data : {
 		keeps: [],
 		newKeep: '',
-		fillKeep: [
-			{id: '', keep: ''}
-		],
+		fillKeep: {
+			'id': '',
+			'keep': ''
+		},
 		errors: ''
 	},
 	created: function(){
@@ -24,6 +25,13 @@ new Vue({
 			this.fillKeep.id = keep.id;
 			this.fillKeep.keep = keep.keep;
 			$('#editModal').modal('show');
+		},
+		updateKeep: function(id){
+			var url = 'tasks/' + id;
+			axios.put( url, this.fillKeep).then( response => {
+				this.getKeeps();
+				$('.modal').modal('hide');
+			});
 		},
 		deleteKeep: function(id){
 			var url = 'tasks/' + id;

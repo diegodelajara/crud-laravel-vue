@@ -9,7 +9,7 @@
         </button>
       </div>
 
-      <form method="POST" @submit.prevent="editKeep">
+      <form method="POST" @submit.prevent="updateKeep(fillKeep.id)">
 	      <div class="modal-body">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Tarea</label>
