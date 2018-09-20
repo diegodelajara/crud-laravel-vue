@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+window.Vue = require('vue');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ mix.scripts([
 	'resources/assets/js/axios.js',
 	'resources/assets/js/app.js'
 	], 'public/js/app.js');
+
+
+Vue.config.devtools = true;

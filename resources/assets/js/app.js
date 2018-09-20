@@ -5,6 +5,9 @@ new Vue({
 	data : {
 		keeps: [],
 		newKeep: '',
+		fillKeep: [
+			{id: '', keep: ''}
+		],
 		errors: ''
 	},
 	created: function(){
@@ -17,8 +20,10 @@ new Vue({
 				this.keeps = response.data
 			});
 		},
-		editKeep: function(id){
-			alert('Editar: '+id);
+		editKeep: function(keep){
+			this.fillKeep.id = keep.id;
+			this.fillKeep.keep = keep.keep;
+			$('#editModal').modal('show');
 		},
 		deleteKeep: function(id){
 			var url = 'tasks/' + id;

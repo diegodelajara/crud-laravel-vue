@@ -34,11 +34,11 @@
                           </thead>
                           <tbody>
                             <tr v-for="keep in keeps">
-                              <th scope="row">@{{keep.id}}</th>
+                              <td>@{{keep.id}}</td>
                               <td>@{{keep.keep}}</td>
                               <td>@{{keep.created_at}}</td>
                               <td>
-                                <button class="btn btn-warning" v-on:click="editKeep(keep.id)">Editar</button>
+                                <button class="btn btn-warning" v-on:click="editKeep(keep)">Editar</button>
                               </td>
                               <td>
                                 <button class="btn btn-danger" v-on:click="deleteKeep(keep.id)">Eliminar</button>
@@ -46,7 +46,8 @@
                             </tr>
                           </tbody>
                         </table>
-                        @include('modal')
+                        @include('crear')
+                        @include('editar')
                     </div>        
                 </div>
             </div>
